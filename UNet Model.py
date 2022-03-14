@@ -61,6 +61,6 @@ def unet_model(input_size,n_classes,n_filters=64):
                  activation='relu',
                  kernel_initializer='he_normal')(ublock9)
 
-    #conv10 = Conv2D(filters=n_classes, kernel_size=(1,1))(conv9)    
-    model = Model(inputs=inputs, outputs=conv9)
+    conv10 = Conv2D(filters=n_classes, kernel_size=(1,1))(conv9)    
+    model = Model(inputs=inputs, outputs=conv10)
     return model
